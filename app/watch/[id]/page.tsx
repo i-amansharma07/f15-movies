@@ -47,41 +47,14 @@ function formatDate(dateStr: string): string {
 
 const TMDB_IMG = "https://image.movie.org/t/p";
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default async function WatchPage({ params }: Props) {
   const { id } = await params;
   const movie : Movie | any = await getMovieById(id);
   if (!movie) notFound();
 
-
-  // const related = allMovies
-  //   .filter(
-  //     (m) =>
-  //       m.id !== movie.id &&
-  //       m.genre?.some((g: string) => movie.genre?.includes(g)),
-  //   )
-  //   .slice(0, 5);
-
-  // Avatar: Fire & Ash movie data baked in for demo
-
-  // const backdropUrl = `${TMDB_IMG}/original${movie.backdrop_path}`;
-  // const posterUrl = `${TMDB_IMG}/w500${movie.poster_path}`;
-
   return (
     <div className="min-h-screen bg-[#0A0A0B]">
-      {/* ── Blurred cinematic backdrop behind everything ── */}
-      {/* <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <Image
-          src={backdropUrl}
-          alt=""
-          fill
-          priority
-          className="object-cover object-top opacity-[0.07] blur-2xl scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0B]/60 via-[#0A0A0B]/80 to-[#0A0A0B]" />
-      </div> */}
-
       <div className="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 pt-6 pb-20">
         {/* ── Main layout: player + sidebar ── */}
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">

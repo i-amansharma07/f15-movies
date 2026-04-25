@@ -27,18 +27,18 @@ export default function SearchBar() {
     setValue(e.target.value);
   };
 
-  return (
+return (
     <div className="flex gap-5">
       <div className="relative w-full max-w-xl">
-        <SearchIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#4A4845]" />
+        <SearchIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#C8C4BE]" />
         <input
           type="text"
           value={value}
           onChange={handleChange}
           placeholder="Search movies, genres..."
-          className="w-full bg-[#1A1A1F] text-[#F0EDE8] placeholder-[#4A4845]
-                   pl-12 pr-5 py-4 rounded-full border border-white/5
-                   focus:outline-none focus:border-[#E8B84B]/40 focus:shadow-[0_0_0_3px_rgba(232,184,75,0.1)]
+          className="w-full bg-[#4A4A55] text-[#F0EDE8] placeholder-[#B0ACA6]
+                   pl-12 pr-5 py-4 rounded-full border-2 border-white/40
+                   focus:outline-none focus:border-[#E8B84B] focus:shadow-[0_0_0_4px_rgba(232,184,75,0.3)]
                    transition-all duration-300 font-body text-sm"
         />
       </div>

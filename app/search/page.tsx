@@ -3,6 +3,7 @@ import { Movie } from "@/types/movie";
 import { notFound } from "next/navigation";
 import { searchMovies } from "@/actions/movie";
 import MovieGrid from "@/components/home/MovieGrid";
+import SearchBar from "@/components/search/SearchBar";
 
 type SearchPageProps = {
   searchParams: Promise<{ q?: string }>;
@@ -17,8 +18,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const movies: Movie[] = await searchMovies(q);
 
   return (
-    <section className="max-w-screen-xl mx-auto px-6 py-12">
-      <h2 className="font-display text-3xl mb-8">
+    <section className="max-w-screen-xl flex flex-col gap-8 mx-auto px-6 py-12">
+      <SearchBar />
+      <h2 className="font-display text-3xl">
         Results for <span className="text-[#E8B84B]">"{q}"</span>
       </h2>
       <MovieGrid title="" movies={movies} />
