@@ -1,27 +1,27 @@
 // // app/search/page.tsx
-// // import SearchResults from '@/components/search/SearchResults';
+import { Movie } from "@/types/movie";
+import { notFound } from "next/navigation";
+import { searchMovies } from "@/actions/movie";
+import MovieGrid from "@/components/home/MovieGrid";
 
-// interface Props {
-//   searchParams: { q?: string };
-// }
+type SearchPageProps = {
+  searchParams: Promise<{ q?: string }>;
+};
 
-export default async function SearchPage() {
-  return <></>
-// export default async function SearchPage({ searchParams }: Props) {
-//   const query = searchParams.q?.toLowerCase() ?? '';
-//   const all = await getAllMovies();
-//   const results = all.filter(
-//     (m) =>
-//       m.title.toLowerCase().includes(query) ||
-//       m.genre.some((g) => g.toLowerCase().includes(query))
-//   );
+export default async function SearchPage({ searchParams }: SearchPageProps) {
+  const { q } = await searchParams;
+  if (!q) {
+    return notFound();
+  }
 
-//   return (
-//     <section className="max-w-screen-xl mx-auto px-6 py-12">
-//       <h2 className="font-display text-3xl mb-8">
-//         Results for <span className="text-[#E8B84B]">"{searchParams.q}"</span>
-//       </h2>
-//       {/* <SearchResults movies={results} /> */}
-//     </section>
-//   );
+  const movies: Movie[] = await searchMovies(q);
+
+  return (
+    <section className="max-w-screen-xl mx-auto px-6 py-12">
+      <h2 className="font-display text-3xl mb-8">
+        Results for <span className="text-[#E8B84B]">"{q}"</span>
+      </h2>
+      <MovieGrid title="" movies={movies} />
+    </section>
+  );
 }

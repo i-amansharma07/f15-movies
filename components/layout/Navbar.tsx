@@ -26,13 +26,13 @@ export default function Navbar() {
         <span className="font-display text-2xl tracking-tight">Floor15</span>
       </Link>
 
-      {/* <Link
+      <Link
         href="/search"
         className="p-2 rounded-full hover:bg-white/10 transition-colors"
         aria-label="Search"
       >
-        <SearchIcon className="w-5 h-5 text-[#9B9591] hover:text-white transition-colors" />
-      </Link> */}
+        {/* <SearchIcon className="w-5 h-5 text-[#9B9591] hover:text-white transition-colors" /> */}
+      </Link>
     </nav>
   );
 }

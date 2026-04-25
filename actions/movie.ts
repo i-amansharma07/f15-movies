@@ -24,7 +24,6 @@ async function fetchTMDB<T>(url: string, retries = 3): Promise<T> {
       await new Promise((resolve) => setTimeout(resolve, 2 ** attempt * 500));
     }
   }
-
   throw new Error("Unreachable");
 }
 
@@ -42,4 +41,12 @@ async function getMovieById(id: string) : Promise<Movie> {
   return fetchTMDB(url);
 }
 
-export { getAllMovies, getMovieById };
+async function searchMovies(query: string) : Promise<Movie[]> {
+  const url = `${BASE_URL}/search/movie?query=${encodeURIComponent(query)}&language=en-US&page=1`;
+  
+  const data = await fetchTMDB<{ results: Movie[] }>(url);
+  return data.results;
+}
+
+
+export { getAllMovies, getMovieById, searchMovies };

@@ -100,7 +100,7 @@ export default async function WatchPage({ params }: Props) {
                   allowFullScreen
                   allow="autoplay; encrypted-media; picture-in-picture"
                   style={{ border: "none" }}
-                  sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
+                  // sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
                 />
               </div>
             </div>

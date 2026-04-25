@@ -30,7 +30,7 @@ export default function TMDBImage({
 
   return (
     <Image
-      src={src}
+      src={src || fallback}
       alt={alt}
       fill
       className={`object-cover ${className}`}

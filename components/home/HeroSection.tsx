@@ -145,9 +145,6 @@ export default function HeroSection({ movie }: Props) {
                     Watch Now
                   </Button>
                 </Link>
-                <Button variant="ghost" icon={<InfoIcon className="w-4 h-4" />}>
-                  More Info
-                </Button>
               </div>
             </div>
 
