@@ -18,7 +18,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const movies: Movie[] = await searchMovies(q);
 
   return (
-    <section className="max-w-screen-xl flex flex-col gap-8 mx-auto px-6 py-12">
+    <section className="max-w-screen-xl mt-5 gap-5  sm:mt-8 flex  sm:gap-8  flex-col  px-6 py-12">
       <SearchBar />
       <h2 className="font-display text-3xl">
         Results for <span className="text-[#E8B84B]">"{q}"</span>

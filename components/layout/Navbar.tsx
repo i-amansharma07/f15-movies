@@ -25,14 +25,6 @@ export default function Navbar() {
         <FilmIcon className="w-6 h-6 text-[#E8B84B] group-hover:rotate-12 transition-transform" />
         <span className="font-display text-2xl tracking-tight">Floor15</span>
       </Link>
-
-      <Link
-        href="/search"
-        className="p-2 rounded-full hover:bg-white/10 transition-colors"
-        aria-label="Search"
-      >
-        {/* <SearchIcon className="w-5 h-5 text-[#9B9591] hover:text-white transition-colors" /> */}
-      </Link>
     </nav>
   );
 }

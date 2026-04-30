@@ -14,7 +14,7 @@ export default async function HomePage() {
       <HeroSection movie={featured} />
       <section className="max-w-screen-xl mx-auto px-6 py-12">
         <SearchBar />
-        <MovieGrid movies={movies} />
+        <MovieGrid movies={movies} classname="mt-10" />
       </section>
     </>
   );

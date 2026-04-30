@@ -4,13 +4,6 @@ import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { SearchIcon } from "lucide-react";
 import { useDebouncedCallback } from "use-debounce";
-import {
-  PlayIcon,
-  InfoIcon,
-  StarIcon,
-  CalendarIcon,
-  UsersIcon,
-} from "lucide-react";
 import Button from "@/components/ui/Button";
 
 export default function SearchBar() {
