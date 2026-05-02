@@ -18,12 +18,14 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const movies: Movie[] = await searchMovies(q);
 
   return (
-    <section className="max-w-screen-xl mt-5 gap-5  sm:mt-8 flex  sm:gap-8  flex-col  px-6 py-12">
-      <SearchBar />
-      <h2 className="font-display text-3xl">
-        Results for <span className="text-[#E8B84B]">"{q}"</span>
-      </h2>
-      <MovieGrid title="" movies={movies} />
-    </section>
+    <div className="flex justify-center w-full min-h-screen overflow-hidden">
+      <section className="max-w-screen-2xl mt-5 gap-5  sm:mt-8 flex  sm:gap-8  flex-col  px-6 py-12">
+        <SearchBar initialValue={q} />
+        <h2 className="font-display text-3xl">
+          Results for <span className="text-[#E8B84B]">"{q}"</span>
+        </h2>
+        <MovieGrid title="" movies={movies} classname="min-w-full" />
+      </section>
+    </div>
   );
 }
