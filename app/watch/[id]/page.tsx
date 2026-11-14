@@ -31,12 +31,11 @@ export default async function WatchPage({ params }: Props) {
             >
               <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
                 <iframe
-                  src={`https://www.vidking.net/embed/movie/${id}`}
+                  src={`https://www.vidpop.stream/movie/${id}?theme=masterclass&autoplay=true`}
                   className="absolute inset-0 w-full h-full"
                   allowFullScreen
                   allow="autoplay; encrypted-media; picture-in-picture"
                   style={{ border: "none" }}
-                  // sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
                 />
               </div>
             </div>
